@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bhupal's Stock Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>📊 Bhupal's Stock Tracker</h1>
+
+  <div class="tabs">
+    <button onclick="showTab('alerts')">Alerts</button>
+    <button onclick="showTab('targets')">Targets</button>
+    <button onclick="showTab('orders')">Orders</button>
+    <button onclick="showTab('insider')">Insider</button>
+    <button onclick="showTab('ai')">AI Assistant</button>
+  </div>
+
+  <div id="alerts" class="tab-content">
+    <input type="text" id="search" placeholder="Search alerts..." oninput="filterAlerts()" />
+    <div id="alerts-list">Loading alerts...</div>
+  </div>
+
+  <div id="targets" class="tab-content" style="display:none;">
+    <p>Track targets set by major financial firms like ICICI, Axis, etc.</p>
+  </div>
+
+  <div id="orders" class="tab-content" style="display:none;">
+    <p>Company order book updates will be listed here.</p>
+  </div>
+
+  <div id="insider" class="tab-content" style="display:none;">
+    <p>Promoter, FII, and DII buy/sell activity summaries.</p>
+  </div>
+
+  <div id="ai" class="tab-content" style="display:none;">
+    <p>🤖 Ask AI to summarize</p>
+    <input type="text" id="aiInput" placeholder="Summarize Infosys Q4" />
+    <button onclick="getAISummary()">Get Summary</button>
+    <button onclick="downloadSummary()">Download Summary</button>
+    <pre id="aiOutput"></pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
